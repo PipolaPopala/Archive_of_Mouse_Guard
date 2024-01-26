@@ -1,5 +1,6 @@
 <script>
 	export let choiceName;
+	export let closeNameModal;
 	let value = '';
 	let nameArrayMan = [
 		'Алгомuн',
@@ -92,6 +93,6 @@
 </label>
 
 <p>{value}</p>
-<button type="button" on:click={() => choiceName(value)}>Подтвердить имя</button>
+<button type="button" on:click={() => {choiceName(value); closeNameModal()}}>Подтвердить имя</button>
 
 <style></style>

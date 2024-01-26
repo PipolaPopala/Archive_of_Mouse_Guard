@@ -1,5 +1,6 @@
 <script>
-	export let choiceExperience;
+	export let choiceTraits;
+	export let closeTraitsModal;
 	let value = [];
 	function changeValue(elem) {
 		value = [...value, elem];
@@ -158,6 +159,6 @@
 {/each}
 
 <p>{value}</p>
-<button type="button" on:click={() => choiceExperience(value)}>Подтвердить выбор черт</button>
+<button type="button" on:click={() => {choiceTraits(value); closeTraitsModal()}}>Подтвердить выбор черт</button>
 
 <style></style>

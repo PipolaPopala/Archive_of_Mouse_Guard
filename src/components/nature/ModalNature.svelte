@@ -1,5 +1,6 @@
 <script>
 	export let choiceNature;
+	export let closeNatureModal;
 	let value = 3;
 	function changeUp() {
 		value = value + 1;
@@ -8,7 +9,7 @@
 	function choiceTraitTwo() {}
 </script>
 
-<p>Мышиная природа</p>
+<p>(занятно было бы нарисовать эти ситуации в виде комикса, с описанием того, на что повлияет каждый из выборов)</p>
 
 <p>
 	Ваш персонаж готовится к зиме и ограничивает себя, или он использует то, что у него есть, как
@@ -29,6 +30,6 @@
 <button type="button" on:click={choiceTraitTwo}>Боится, но борится с этим страхом</button>
 
 <p>{value}</p>
-<button type="button" on:click={() => choiceNature(value)}>Подтвердить значение природы</button>
+<button type="button" on:click={() => {choiceNature(value); closeNatureModal()}}>Подтвердить значение природы</button>
 
 <style></style>

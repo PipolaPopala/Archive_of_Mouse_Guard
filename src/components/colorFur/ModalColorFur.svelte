@@ -1,5 +1,6 @@
 <script>
-	export let choiceColorCloak;
+	export let choiceColorFur;
+	export let closeColorFurModal;
 	let value = '';
 	let colors = [
 		'Коричневый',
@@ -14,6 +15,8 @@
 	}
 </script>
 
+<p>(забавно было бы нарисовать некий эскиз мышки, и, при выборе цвета у неё меняется шёрстка)</p>
+
 <p>Выберите цвет из предложенных, кликнув по нему, или придумайте свой</p>
 {#each colors as elem}
 	<button type="button" on:click={() => changeValue(elem)}>{elem}</button>
@@ -25,6 +28,6 @@
 </label>
 
 <p>{value}</p>
-<button type="button" on:click={() => choiceColorCloak(value)}>Подтвердить цвет плаща</button>
+<button type="button" on:click={() => {choiceColorFur(value); closeColorFurModal()}}>Подтвердить цвет шёрстки</button>
 
 <style></style>

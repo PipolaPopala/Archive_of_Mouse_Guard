@@ -1,5 +1,6 @@
 <script>
 	export let choiceKnowledge;
+	export let closeKnowledgeModal;
 	let value = [];
 	function changeValue(elem) {
 		value = [...value, elem];
@@ -111,6 +112,6 @@
 {/each}
 
 <p>{value}</p>
-<button type="button" on:click={() => choiceKnowledge(value)}>Подтвердить выбор знаний</button>
+<button type="button" on:click={() => {choiceKnowledge(value); closeKnowledgeModal()}}>Подтвердить выбор знаний</button>
 
 <style></style>

@@ -7,6 +7,14 @@
 
 <section>
 	<h1>My profile</h1>
+	<img src="/mouseCircle.png" alt="" />
 </section>
 
-<style></style>
+<style>
+	section {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+	}
+</style>

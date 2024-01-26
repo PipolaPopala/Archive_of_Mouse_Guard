@@ -1,5 +1,6 @@
 <script>
-	export let choiceBirth;
+	export let choiceHome;
+	export let closeHomeModal;
 	let value = { name: '', description: '', skills: [], traits: [] };
 	function changeValue(elem) {
 		value = elem;
@@ -228,7 +229,7 @@
 	];
 </script>
 
-<p>Выберите место рождения персонажа</p>
+<p>(здесь можно расположить всю карту Мышиных Территорий, и подтвечивать города на ней. При наведении, раскрывается окошко с информацией про этот город, при наведении на черты, так же откроется подробное описание черты. Кликнув на город, информация о нём оказывается ниже, там же стоит выбрать навыки и черту, после чего можно подтвердить выбор.)</p>
 
 {#each birthplaceArray as town}
 	<button type="button" on:click={() => changeValue(town)}>
@@ -239,6 +240,6 @@
 {/each}
 
 <p>{value.name}</p>
-<button type="button" on:click={() => choiceBirth(value)}>Подтвердить выбор места рождения</button>
+<button type="button" on:click={() => {choiceHome(value); closeHomeModal()}}>Подтвердить выбор места рождения</button>
 
 <style></style>

@@ -1,5 +1,6 @@
 <script>
-	export let choiceExperience;
+	export let choiceSkills;
+	export let closeSkillsModal;
 	let value = [];
 	function changeValue(elem) {
 		value = [...value, elem];
@@ -101,6 +102,8 @@
 	];
 </script>
 
+<p>(списки навыков, с описанием того, сколько навыков из каких списков можно выбрать. Может быть вставить картинки сответствующие вопросам, на которые следует ответить пероснажу, родителей, наставника и т.д.)</p>
+
 <p>В чём персонаж талантлив от природы?</p>
 {#each skillsNature as skill}
 	<button type="button" on:click={() => changeValue(skill)}>
@@ -144,6 +147,6 @@
 {/each}
 
 <p>{value}</p>
-<button type="button" on:click={() => choiceExperience(value)}>Подтвердить выбор черт</button>
+<button type="button" on:click={() => {choiceSkills(value); closeSkillsModal()}}>Подтвердить выбор черт</button>
 
 <style></style>
