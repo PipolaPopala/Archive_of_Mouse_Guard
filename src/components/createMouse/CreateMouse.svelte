@@ -1,63 +1,25 @@
 <script>
-	import Name from './name/Name.svelte';
-	import Rank from './rank/Rank.svelte';
-  import Home from './home/Home.svelte';
-  import Skills from './skills/Skills.svelte';
-  import Nature from './nature/Nature.svelte';
-  import Knowledge from './knowledge/Knowledge.svelte';
-  import Traits from './traits/Traits.svelte';
-  import ColorFur from './colorFur/ColorFur.svelte';
-  import ColorCloak from './colorCloak/ColorCloak.svelte';
+	import Name from './Name.svelte';
+	import Rank from './Rank.svelte';
+  import Home from './Home.svelte';
+  import Skills from './Skills.svelte';
+  import Nature from './Nature.svelte';
+  import Knowledge from './Knowledge.svelte';
+  import Traits from './Traits.svelte';
+  import ColorFur from './ColorFur.svelte';
+  import ColorCloak from './ColorCloak.svelte';
 
 	let concept = '';
-
 	let age = 0;
-
 	let name = '';
-	function choiceName(value) {
-		name = value;
-	}
-
 	let rank = '';
-	function choiceRank(value) {
-		rank = value;
-	}
-
 	let home = {};
-	function choiceHome(value) {
-		home = value;
-	}
-
 	let skills = [];
-	function choiceSkills(value) {
-		skills = value;
-	}
-
 	let nature = 3;
-	function choiceNature(value) {
-		nature = value;
-	}
-
 	let knowledge = [];
-	function choiceKnowledge(value) {
-		knowledge = value;
-	}
-
 	let traits = [];
-	function choiceTraits(value) {
-		traits = value;
-	}
-
 	let colorFur = '';
-	function choiceColorFur(value) {
-		colorFur = value;
-	}
-
 	let colorCloak = '';
-	function choiceColorCloak(value) {
-		colorCloak = value;
-	}
-
 	let parents = [];
 	let master = '';
 	let mentor = '';
@@ -75,31 +37,31 @@
 </label>
 <p>{concept}</p>
 
-<Name {choiceName} />
+<Name bind:name/>
 <p>{name}</p>
 
-<Rank {choiceRank} />
+<Rank bind:rank />
 <p>{rank}</p>
 
-<Home {choiceHome} />
+<Home bind:home />
 <p>{home.name}</p>
 
-<Skills {choiceSkills} />
+<Skills bind:skills />
 <p>{skills}</p>
 
-<Nature {choiceNature} />
+<Nature bind:nature />
 <p>{nature}</p>
 
-<Knowledge {choiceKnowledge} />
+<Knowledge bind:knowledge />
 <p>{knowledge}</p>
 
-<Traits {choiceTraits} />
+<Traits bind:traits />
 <p>{traits}</p>
 
-<ColorFur {choiceColorFur} />
+<ColorFur bind:colorFur />
 <p>{colorFur}</p>
 
-<ColorCloak {choiceColorCloak} />
+<ColorCloak bind:colorCloak />
 <p>{colorCloak}</p>
 
 <label>

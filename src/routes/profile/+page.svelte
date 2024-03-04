@@ -1,4 +1,5 @@
-<script></script>
+<script>
+</script>
 
 <svelte:head>
 	<title>Profile</title>

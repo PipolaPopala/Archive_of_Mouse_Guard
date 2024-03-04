@@ -1,9 +1,19 @@
 <script>
-	export let choiceHome;
-	export let closeHomeModal;
+	import Modal from '../Modal.svelte';
+	export let home;
+	let showHome = false;
+	function openHomeModal() {
+		showHome = true;
+	}
+	function closeHomeModal() {
+		showHome = false;
+	}
 	let value = { name: '', description: '', skills: [], traits: [] };
 	function changeValue(elem) {
 		value = elem;
+	}
+	function choiceHome(value) {
+		home = value;
 	}
 	let birthplaceArray = [
 		{
@@ -229,17 +239,33 @@
 	];
 </script>
 
-<p>(здесь можно расположить всю карту Мышиных Территорий, и подтвечивать города на ней. При наведении, раскрывается окошко с информацией про этот город, при наведении на черты, так же откроется подробное описание черты. Кликнув на город, информация о нём оказывается ниже, там же стоит выбрать навыки и черту, после чего можно подтвердить выбор.)</p>
+<button on:click={openHomeModal}> {home.name || 'Выберите место рождения персонажа'}  </button>
+{#if showHome}
+	<Modal close={closeHomeModal} title="Выберите место рождения персонажа">
+		<p>
+			(здесь можно расположить всю карту Мышиных Территорий, и подтвечивать города на ней. При
+			наведении, раскрывается окошко с информацией про этот город, при наведении на черты, так же
+			откроется подробное описание черты. Кликнув на город, информация о нём оказывается ниже, там
+			же стоит выбрать навыки и черту, после чего можно подтвердить выбор.)
+		</p>
 
-{#each birthplaceArray as town}
-	<button type="button" on:click={() => changeValue(town)}>
-		<p>{`${town.name} ${town.description}`}</p>
-		<p>Навыки жителей: {town.skills.join(', ')}</p>
-		<p>Черты жителей: {town.traits.join(', ')}</p>
-	</button>
-{/each}
+		{#each birthplaceArray as town}
+			<button type="button" on:click={() => changeValue(town)}>
+				<p>{`${town.name} ${town.description}`}</p>
+				<p>Навыки жителей: {town.skills.join(', ')}</p>
+				<p>Черты жителей: {town.traits.join(', ')}</p>
+			</button>
+		{/each}
 
-<p>{value.name}</p>
-<button type="button" on:click={() => {choiceHome(value); closeHomeModal()}}>Подтвердить выбор места рождения</button>
+		<p>{value.name}</p>
+		<button
+			type="button"
+			on:click={() => {
+				choiceHome(value);
+				closeHomeModal();
+			}}>Подтвердить выбор места рождения</button
+		>
+	</Modal>
+{/if}
 
 <style></style>

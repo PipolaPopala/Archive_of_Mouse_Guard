@@ -1,6 +1,13 @@
 <script>
-	export let choiceName;
-	export let closeNameModal;
+	import Modal from '../Modal.svelte';
+	export let name;
+	let showName = false;
+	function openNameModal() {
+		showName = true;
+	}
+	function closeNameModal() {
+		showName = false;
+	}
 	let value = '';
 	let nameArrayMan = [
 		'Алгомuн',
@@ -75,24 +82,38 @@
 	function changeValue(elem) {
 		value = elem;
 	}
+	function choiceName(value) {
+		name = value;
+	}
 </script>
 
-<p>Выберите имя из предложенных, кликнув по нему, или придумайте своё</p>
-<p>Мужские имена:</p>
-{#each nameArrayMan as elem}
-	<button type="button" on:click={() => changeValue(elem)}>{elem}</button>
-{/each}
-<p>Женские имена:</p>
-{#each nameArrayMale as elem}
-	<button type="button" on:click={() => changeValue(elem)}>{elem}</button>
-{/each}
+<button on:click={openNameModal}> {name || 'Выберите имя персонажу'} </button>
+{#if showName}
+	<Modal close={closeNameModal} title="Выберите имя и пол персонажа">
+		<p>Выберите имя из предложенных, кликнув по нему, или придумайте своё</p>
+		<p>Мужские имена:</p>
+		{#each nameArrayMan as elem}
+			<button type="button" on:click={() => changeValue(elem)}>{elem}</button>
+		{/each}
+		<p>Женские имена:</p>
+		{#each nameArrayMale as elem}
+			<button type="button" on:click={() => changeValue(elem)}>{elem}</button>
+		{/each}
 
-<label>
-	Введите своё имя
-	<input type="text" bind:value />
-</label>
+		<label>
+			Введите своё имя
+			<input type="text" bind:value />
+		</label>
 
-<p>{value}</p>
-<button type="button" on:click={() => {choiceName(value); closeNameModal()}}>Подтвердить имя</button>
+		<p>{value}</p>
+		<button
+			type="button"
+			on:click={() => {
+				choiceName(value);
+				closeNameModal();
+			}}>Подтвердить имя</button
+		>
+	</Modal>
+{/if}
 
 <style></style>

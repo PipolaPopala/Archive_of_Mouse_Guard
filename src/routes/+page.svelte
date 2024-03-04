@@ -6,7 +6,14 @@
 </svelte:head>
 
 <section>
-	<h1>Welcome to the archive of the mouse guards</h1>
+	<h1>Welcome to the archive of the mouse guard</h1>
 </section>
 
-<style></style>
+<style>
+	section {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+	}
+</style>

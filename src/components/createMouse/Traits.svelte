@@ -1,9 +1,19 @@
 <script>
-	export let choiceTraits;
-	export let closeTraitsModal;
+	import Modal from '../Modal.svelte';
+	export let traits;
+	let showTraits = false;
+	function openTraitsModal() {
+		showTraits = true;
+	}
+	function closeTraitsModal() {
+		showTraits = false;
+	}
 	let value = [];
 	function changeValue(elem) {
 		value = [...value, elem];
+	}
+	function choiceTraits(value) {
+		traits = value;
 	}
 	let traitBirth = [
 		{ title: 'Бдительный', description: '' },
@@ -137,28 +147,39 @@
 	];
 </script>
 
-<p>С какой чертой родился ваш персонаж?</p>
-{#each traitBirth as { title, description }}
-	<button type="button" on:click={() => changeValue(title)} title={description}>
-		{title}
-	</button>
-{/each}
+<button on:click={openTraitsModal}> Мышиные черты </button>
+{#if showTraits}
+	<Modal close={closeTraitsModal} title="Определите мышиные черты">
+		<p>С какой чертой родился ваш персонаж?</p>
+		{#each traitBirth as { title, description }}
+			<button type="button" on:click={() => changeValue(title)} title={description}>
+				{title}
+			</button>
+		{/each}
 
-<p>Какую черту пероснаж унаследовал от родителей?</p>
-{#each traitParents as { title, description }}
-	<button type="button" on:click={() => changeValue(title)} title={description}>
-		{title}
-	</button>
-{/each}
+		<p>Какую черту пероснаж унаследовал от родителей?</p>
+		{#each traitParents as { title, description }}
+			<button type="button" on:click={() => changeValue(title)} title={description}>
+				{title}
+			</button>
+		{/each}
 
-<p>Жизнь в пути</p>
-{#each traitLife as { title, description }}
-	<button type="button" on:click={() => changeValue(title)} title={description}>
-		{title}
-	</button>
-{/each}
+		<p>Жизнь в пути</p>
+		{#each traitLife as { title, description }}
+			<button type="button" on:click={() => changeValue(title)} title={description}>
+				{title}
+			</button>
+		{/each}
 
-<p>{value}</p>
-<button type="button" on:click={() => {choiceTraits(value); closeTraitsModal()}}>Подтвердить выбор черт</button>
+		<p>{value}</p>
+		<button
+			type="button"
+			on:click={() => {
+				choiceTraits(value);
+				closeTraitsModal();
+			}}>Подтвердить выбор черт</button
+		>
+	</Modal>
+{/if}
 
 <style></style>

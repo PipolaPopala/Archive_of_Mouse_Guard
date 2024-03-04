@@ -1,5 +1,5 @@
 <script>
-	import CreateMouse from '../../components/CreateMouse.svelte';
+	import CreateMouse from '../../components/createMouse/CreateMouse.svelte';
 </script>
 
 <svelte:head>
