@@ -18,7 +18,7 @@
 	}
 </script>
 
-<button on:click={openColorFurModal}> Выберите цвет шёрстки </button>
+<button on:click={openColorFurModal}> {colorFur || 'Выберите цвет шёрстки'} </button>
 {#if showColorFur}
 	<Modal close={closeColorFurModal} title="Выберите цвет шёрстки">
 		<p>

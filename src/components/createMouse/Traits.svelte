@@ -147,7 +147,7 @@
 	];
 </script>
 
-<button on:click={openTraitsModal}> Мышиные черты </button>
+<button on:click={openTraitsModal}> {traits.length < 1 ? 'Мышиные черты' : traits} </button>
 {#if showTraits}
 	<Modal close={closeTraitsModal} title="Определите мышиные черты">
 		<p>С какой чертой родился ваш персонаж?</p>

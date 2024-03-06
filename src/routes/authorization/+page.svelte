@@ -9,7 +9,7 @@
 
 <svelte:head>
 	<title>Authorization</title>
-	<meta name="description" content="Svelte demo app" />
+	<meta name="description" content="Authorization" />
 </svelte:head>
 
 <section>

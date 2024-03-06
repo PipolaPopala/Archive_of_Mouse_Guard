@@ -6,7 +6,7 @@
 </svelte:head>
 
 <section>
-	<h1>Welcome to the archive of the mouse guard</h1>
+	<h1>Добро пожаловать в архив Мышиной Стражи</h1>
 </section>
 
 <style>

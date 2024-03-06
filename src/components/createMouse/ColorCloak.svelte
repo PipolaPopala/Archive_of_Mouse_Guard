@@ -18,7 +18,7 @@
 	}
 </script>
 
-<button on:click={openColorCloakModal}> Выберите цвет плаща </button>
+<button on:click={openColorCloakModal}> {colorCloak || 'Выберите цвет плаща'} </button>
 {#if showColorCloak}
 	<Modal close={closeColorCloakModal} title="Выберите цвет плаща">
 		<p>

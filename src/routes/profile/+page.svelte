@@ -3,11 +3,11 @@
 
 <svelte:head>
 	<title>Profile</title>
-	<meta name="description" content="Svelte demo app" />
+	<meta name="description" content="User profile" />
 </svelte:head>
 
 <section>
-	<h1>My profile</h1>
+	<h1>Профиль</h1>
 	<img src="/mouseCircle.png" alt="" />
 </section>
 

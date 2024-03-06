@@ -19,7 +19,7 @@
 	}
 </script>
 
-<button on:click={openNatureModal}> Мышиная природа </button>
+<button on:click={openNatureModal}> {`${nature} - Мышиная природа`} </button>
 {#if showNature}
 	<Modal close={closeNatureModal} title="Определите мышиную природу">
 		<p>

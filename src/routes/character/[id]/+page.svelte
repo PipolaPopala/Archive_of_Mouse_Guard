@@ -2,11 +2,11 @@
 
 <svelte:head>
 	<title>Character</title>
-	<meta name="description" content="Svelte demo app" />
+	<meta name="description" content="Character list" />
 </svelte:head>
 
 <section>
-	<h1>Character</h1>
+	<!-- <h1>Character</h1> -->
 </section>
 
 <style></style>

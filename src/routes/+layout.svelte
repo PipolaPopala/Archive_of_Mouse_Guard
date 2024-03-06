@@ -4,10 +4,10 @@
 
 <header>
 	<nav>
-		<a href="/">Archive</a>
-		<a href="/createMouse">Create Mouse</a>
-		<a href="/profile">Profile</a>
-		<a href="/authorization">Authorization</a>
+		<a href="/">Архив</a>
+		<a href="/createMouse">Создание персонажа</a>
+		<a href="/profile">Профиль пользователя</a>
+		<a href="/authorization">Авторизация</a>
 	</nav>
 </header>
 

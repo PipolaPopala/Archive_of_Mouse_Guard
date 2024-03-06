@@ -112,7 +112,7 @@
 	];
 </script>
 
-<button on:click={openSkillsModal}> Жизненный опыт персонажа </button>
+<button on:click={openSkillsModal}> {skills.length < 1 ? 'Жизненный опыт персонажа' : skills} </button>
 <p>Где-то здесь разместить навыки</p>
 {#if showSkills}
 	<Modal close={closeSkillsModal} title="Определите жизненный опыт персонажа">

@@ -4,7 +4,7 @@
 
 <svelte:head>
 	<title>Create Mouse</title>
-	<meta name="description" content="Svelte demo app" />
+	<meta name="description" content="Create Mouse" />
 </svelte:head>
 
 <section>

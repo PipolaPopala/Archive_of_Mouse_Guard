@@ -1,13 +1,13 @@
 <script>
 	import Name from './Name.svelte';
 	import Rank from './Rank.svelte';
-  import Home from './Home.svelte';
-  import Skills from './Skills.svelte';
-  import Nature from './Nature.svelte';
-  import Knowledge from './Knowledge.svelte';
-  import Traits from './Traits.svelte';
-  import ColorFur from './ColorFur.svelte';
-  import ColorCloak from './ColorCloak.svelte';
+	import Home from './Home.svelte';
+	import Skills from './Skills.svelte';
+	import Nature from './Nature.svelte';
+	import Knowledge from './Knowledge.svelte';
+	import Traits from './Traits.svelte';
+	import ColorFur from './ColorFur.svelte';
+	import ColorCloak from './ColorCloak.svelte';
 
 	let concept = '';
 	let age = 0;
@@ -31,38 +31,24 @@
 	let equipment = '';
 </script>
 
+<div class="layout">
+	<Name bind:name />
+</div>
+
 <label>
 	<p>Концепция персонажа</p>
 	<textarea name="" cols="30" rows="3" bind:value={concept}></textarea>
 </label>
 <p>{concept}</p>
 
-<Name bind:name/>
-<p>{name}</p>
-
 <Rank bind:rank />
-<p>{rank}</p>
-
 <Home bind:home />
-<p>{home.name}</p>
-
 <Skills bind:skills />
-<p>{skills}</p>
-
 <Nature bind:nature />
-<p>{nature}</p>
-
 <Knowledge bind:knowledge />
-<p>{knowledge}</p>
-
 <Traits bind:traits />
-<p>{traits}</p>
-
 <ColorFur bind:colorFur />
-<p>{colorFur}</p>
-
 <ColorCloak bind:colorCloak />
-<p>{colorCloak}</p>
 
 <label>
 	<p>Назовите родителей</p>
@@ -121,4 +107,12 @@
 <p>Где-то разместить проверочные баллы, баллы судьбы и баллы личности</p>
 
 <style>
+	.layout {
+		width: 100%;
+		height: 1000px;
+		background-image: url('$lib/images/characterLayout.jpg');
+		background-position: center;
+		background-size: contain;
+		background-repeat: no-repeat;
+	}
 </style>

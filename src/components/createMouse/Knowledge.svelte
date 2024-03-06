@@ -99,7 +99,7 @@
 	let knowledgeArrayKapitans = ['Локхейвене', 'Матриархе Стражи'];
 </script>
 
-<button on:click={openKnowledgeModal}> Имеющиеся знания </button>
+<button on:click={openKnowledgeModal}> {knowledge.length < 1 ? 'Имеющиеся знания' : knowledge} </button>
 {#if showKnowledge}
 	<Modal close={closeKnowledgeModal} title="Определите имеющиеся знания">
 		<p>Выберите знания персонажа</p>
